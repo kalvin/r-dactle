@@ -100,7 +100,7 @@ window.onload = function(){
         if (event.keyCode === 13) {
             var wikipediaUrl = document.getElementById("wikiURL").value;
             var urlPath = wikipediaUrl.split('/');
-            var urlStr = "https://www.r-dactle.com/?article=" + window.btoa(urlPath[urlPath.length - 1]);
+            var urlStr = "https://r-dactle.com/?article=" + window.btoa(urlPath[urlPath.length - 1]);
             var playURL = document.getElementById("playURL");
             playURL.innerHTML = "Play using this link :<br>"+"<a href="+urlStr+">"+urlStr+"</a>";
         }
