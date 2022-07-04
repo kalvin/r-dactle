@@ -3,6 +3,7 @@ var wikiHolder = document.getElementById("wikiHolder")
 var guessLogBody = document.getElementById("guessLogBody");
 var statLogBody = document.getElementById("statsTable");
 var baffled = [];
+var clicked= true;
 var guessedWords = [];
 var ans = [];
 var ansStr;
@@ -272,6 +273,21 @@ async function fetchData(retry, artStr) {
         });
 }
 LoadSave();
+
+function ShowHints(){
+    debugger;
+    if (clicked){
+        for(var i = 0; i < baffled.length; i++){
+            var txt = baffled[i][1].elements[0].value;
+            var txt1 = txt.replace(/(.)./g, "$1_");
+            baffled[i][1].elements[0].element.title = txt1;
+        }
+    }else{
+        for(var i = 0; i < baffled.length; i++){
+            baffled[i][1].elements[0].element.title = "";
+        }     
+    }
+}
 
 function PerformGuess(guessedWord, populate){
     clickThruIndex = 0;

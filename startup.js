@@ -26,7 +26,9 @@ window.onload = function(){
             }
         }
     });
-    
+    $("#hintBtn").click(function(){
+        ShowHints();
+    });
     $("#submitGuess").click(function(){
         if (!document.getElementById("userGuess").value == '' || !document.getElementById("userGuess").value == document.getElementById("userGuess").defaultValue) {
             var allGuesses = [document.getElementById("userGuess").value.replace(/\s/g,'')]
